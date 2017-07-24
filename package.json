@@ -1,0 +1,22 @@
+{
+  "name": "easy-markdown",
+  "description": "",
+  "author": "",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "browser-sync start --config bsconfig.json",
+    "validate": "./node_modules/.bin/validate-office-addin"
+  },
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "jquery": "^3.1.1",
+    "office-addin-validator": "^1.0.1",
+    "office-ui-fabric-js": "^1.3.0",
+    "showdown": "^1.7.1",
+    "urijs": "^1.18.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "@types/office-js": "^0.0.37"
+  }
+}
