@@ -17,7 +17,7 @@ function renderMarkdownQuick(event) {
       else {
         item.body.getAsync(
           result.value,
-          {asyncContext:"This is passed to the callback"},
+          {asyncContext:null},
           function callback(text) {
             if (text.value) {
               var bodyHtml = /<body.*?>([\s\S]*)<\/body>/.exec(text.value)[1];
@@ -30,7 +30,7 @@ function renderMarkdownQuick(event) {
               item.body.prependAsync(
                 html,
                 { coercionType: result.value,
-                asyncContext: {var3:1, var4:2} },
+                asyncContext: null },
                 function (asyncResult) {
                   if (asyncResult.status == 
                       Office.AsyncResultStatus.Failed) {
