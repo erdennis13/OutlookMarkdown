@@ -116,11 +116,11 @@
                     <SourceLocation resid="renderMarkdownPaneUrl" />
                   </Action>
                 </Control>
-                <!-- <Control xsi:type="Button" id="msgComposeInsertDefaultGist">
-                  <Label resid="insertDefaultGistLabel"/>
+                <Control xsi:type="Button" id="msgComposeRenderMarkdownQuick">
+                  <Label resid="renderMarkdownQuickLabel"/>
                   <Supertip>
-                    <Title resid="insertDefaultGistTitle"/>
-                    <Description resid="insertDefaultGistDesc"/>
+                    <Title resid="renderMarkdownQuickTitle"/>
+                    <Description resid="renderMarkdownQuickDesc"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon16"/>
@@ -128,9 +128,9 @@
                     <bt:Image size="80" resid="icon80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>insertDefaultGist</FunctionName>
+                    <FunctionName>renderMarkdownQuick</FunctionName>
                   </Action>
-                </Control> -->
+                </Control>
               </Group>
             </OfficeTab>
           </ExtensionPoint>
@@ -153,16 +153,25 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Easy Markdown"/>
-        <bt:String id="renderMarkdownLabel" DefaultValue="Render Markdown"> 
+        <bt:String id="renderMarkdownLabel" DefaultValue="Markdown! Debug"> 
           <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
         </bt:String> 
-        <bt:String id="renderMarkdownTitle" DefaultValue="Render Markdown"> 
+        <bt:String id="renderMarkdownTitle" DefaultValue="Markdown! Debug"> 
+          <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
+        </bt:String> 
+        <bt:String id="renderMarkdownQuickLabel" DefaultValue="Markdown!"> 
+          <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
+        </bt:String> 
+        <bt:String id="renderMarkdownQuickTitle" DefaultValue="Markdown!"> 
           <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
         </bt:String> 
       </bt:ShortStrings>
       <bt:LongStrings>
         <!-- <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties. This is an example of a button that opens a task pane."/> -->
         <bt:String id="renderMarkdownDesc" DefaultValue="Renders markdown in composition window for easy viewing"> 
+          <!-- <bt:Override Locale="es-ES" Value="Muestra una lista de sus Gists y permite insertar su contenido en el mensaje actual"/>  -->
+        </bt:String> 
+        <bt:String id="renderMarkdownQuickDesc" DefaultValue="Renders markdown in composition window"> 
           <!-- <bt:Override Locale="es-ES" Value="Muestra una lista de sus Gists y permite insertar su contenido en el mensaje actual"/>  -->
         </bt:String> 
       </bt:LongStrings>
