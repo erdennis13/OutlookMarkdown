@@ -6,8 +6,6 @@
           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
           xsi:type="MailApp">
 
-  <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
-
   <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
   <Id>ecfcd625-01ab-475b-ac52-af9cb0430b40</Id>
 
@@ -20,18 +18,18 @@
   <Description DefaultValue="Renders markdown while composing emails"/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png"/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-80.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/logo-high-res.png"/>
 
   <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
   <!-- <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" /> -->
 
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
-  <AppDomains>
+  <!-- <AppDomains>
     <AppDomain>AppDomain1</AppDomain>
     <AppDomain>AppDomain2</AppDomain>
     <AppDomain>AppDomain3</AppDomain>
-  </AppDomains>
+  </AppDomains> -->
   <!--End Basic Settings. -->
 
   <Hosts>
@@ -70,38 +68,11 @@
           <!-- Location of the Functions that UI-less buttons can trigger (ExecuteFunction Actions). -->
           <FunctionFile resid="functionFile" />
 
-          <!-- Message Read -->
-          <!-- <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <OfficeTab id="TabDefault">
-              Up to 6 Groups added per Tab
-              <Group id="msgReadGroup">
-                <Label resid="groupLabel" />
-                Launch the add-in : task pane button
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
-                  <Label resid="paneReadButtonLabel" />
-                  <Supertip>
-                    <Title resid="paneReadSuperTipTitle" />
-                    <Description resid="paneReadSuperTipDescription" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon16" />
-                    <bt:Image size="32" resid="icon32" />
-                    <bt:Image size="80" resid="icon80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="messageReadTaskPaneUrl" />
-                  </Action>
-                </Control>
-                Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint> -->
-
           <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="msgComposeCmdGroup">
                 <Label resid="groupLabel"/>
-                <Control xsi:type="Button" id="msgComposeRenderMarkdown">
+                <Control xsi:type="Button" id="msgComposeRenderMarkdownQuick">
                   <Label resid="renderMarkdownLabel"/>
                   <Supertip>
                     <Title resid="renderMarkdownTitle"/>
@@ -109,22 +80,12 @@
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="icon16"/>
+                    <bt:Image size="20" resid="icon20"/>
+                    <bt:Image size="24" resid="icon24"/>
                     <bt:Image size="32" resid="icon32"/>
-                    <bt:Image size="80" resid="icon80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="renderMarkdownPaneUrl" />
-                  </Action>
-                </Control>
-                <Control xsi:type="Button" id="msgComposeRenderMarkdownQuick">
-                  <Label resid="renderMarkdownQuickLabel"/>
-                  <Supertip>
-                    <Title resid="renderMarkdownQuickTitle"/>
-                    <Description resid="renderMarkdownQuickDesc"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon16"/>
-                    <bt:Image size="32" resid="icon32"/>
+                    <bt:Image size="40" resid="icon40"/>
+                    <bt:Image size="48" resid="icon48"/>
+                    <bt:Image size="64" resid="icon64"/>
                     <bt:Image size="80" resid="icon80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
@@ -134,8 +95,6 @@
               </Group>
             </OfficeTab>
           </ExtensionPoint>
-
-          <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
         </DesktopFormFactor>
       </Host>
     </Hosts>
@@ -143,37 +102,25 @@
     <Resources>
       <bt:Images>
         <bt:Image id="icon16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="icon20" DefaultValue="https://localhost:3000/assets/icon-20.png"/>
+        <bt:Image id="icon24" DefaultValue="https://localhost:3000/assets/icon-24.png"/>
         <bt:Image id="icon32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="icon40" DefaultValue="https://localhost:3000/assets/icon-40.png"/>
+        <bt:Image id="icon48" DefaultValue="https://localhost:3000/assets/icon-48.png"/>
+        <bt:Image id="icon64" DefaultValue="https://localhost:3000/assets/icon-64.png"/>
         <bt:Image id="icon80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://localhost:3000/function-file/function-file.html"/>
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
-        <bt:Url id="renderMarkdownPaneUrl" DefaultValue="https://localhost:3000/msg-compose/render-doc.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Easy Markdown"/>
-        <bt:String id="renderMarkdownLabel" DefaultValue="Markdown! Debug"> 
-          <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
-        </bt:String> 
-        <bt:String id="renderMarkdownTitle" DefaultValue="Markdown! Debug"> 
-          <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
-        </bt:String> 
-        <bt:String id="renderMarkdownQuickLabel" DefaultValue="Markdown!"> 
-          <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
-        </bt:String> 
-        <bt:String id="renderMarkdownQuickTitle" DefaultValue="Markdown!"> 
-          <!-- <bt:Override Locale="es-ES" Value="Inserte el Gist"/>  -->
-        </bt:String> 
+        <bt:String id="renderMarkdownLabel" DefaultValue="Markdown!"/> 
+        <bt:String id="renderMarkdownTitle" DefaultValue="Markdown!"/> 
       </bt:ShortStrings>
       <bt:LongStrings>
-        <!-- <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane displaying all available properties. This is an example of a button that opens a task pane."/> -->
-        <bt:String id="renderMarkdownDesc" DefaultValue="Renders markdown in composition window for easy viewing"> 
-          <!-- <bt:Override Locale="es-ES" Value="Muestra una lista de sus Gists y permite insertar su contenido en el mensaje actual"/>  -->
-        </bt:String> 
-        <bt:String id="renderMarkdownQuickDesc" DefaultValue="Renders markdown in composition window"> 
-          <!-- <bt:Override Locale="es-ES" Value="Muestra una lista de sus Gists y permite insertar su contenido en el mensaje actual"/>  -->
-        </bt:String> 
+        <bt:String id="renderMarkdownDesc" DefaultValue="Renders markdown in composition window for easy viewing"/> 
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
